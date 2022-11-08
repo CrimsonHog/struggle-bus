@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Struggle Bus</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css'><link rel="stylesheet" href="style/style.css">
+
+</head>
+<body onload="startTime()">
+    <!-- partial:index.partial.html -->
+    <header>
+        <nav>
+            <a href="https://github.com/CrimsonHog">GitHub</a>
+            <a href="#">Code</a>
+            <a href="#">Validity</a>
+            <a href="#">Ethan Rinke</a>
+            <span></span>
+        </nav>
+    </header>
+
+    <div class="row">
+        <div class="col-md-4 mx-8 p-2">
+            <div class="card">
+                <div class="container">
+                    <form method="post" action="saveUser.php">
+                        Enter your <label for="userName">Name:</label>
+                        <input type="password" id="userName" name="userName" placeholder="Ghost" required>
+                        <input id="submitButton" type="submit" value="Go!">
+                    </form>
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Submission Date</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Ready?</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="card">
+                <div class="container">
+                    <p>Whats your favorite drink:</p>
+                    <div>
+                        <input type="radio" name="size" value="XS" id="xs" required>
+                        <label for="xs">Coca Cola</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="size" value="S" id="s" required>
+                        <label for="s">Dr Pepper</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="size" value="M" id="m" required>
+                        <label for="m">Mountain Dew</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="size" value="L" id="l" required>
+                        <label for="l">Pepsi</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="size" value="XL" id="xl" required>
+                        <label for="xl">Juice</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="size" value="XXL" id="xxl" required>
+                        <label for="xxl">Water</label>
+                    </div>
+                    <p>
+                        <button id="btn">Show Selected Drink</button>
+                    </p>
+
+                    <p id="output"></p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-md-3 mx-8 p-2">
+            <div class="card">
+                <div class="container">
+                    <h2>Clocking Time</h2>
+
+                    <div id="txt"></div>
+
+                    <script>
+                        function startTime() {
+                            const today = new Date();
+                            let h = today.getHours();
+                            let m = today.getMinutes();
+                            let s = today.getSeconds();
+                            m = checkTime(m);
+                            s = checkTime(s);
+                            document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
+                            setTimeout(startTime, 1000);
+                        }
+
+                        function checkTime(i) {
+                            if (i < 10) {
+                                i = "0" + i
+                            }; // add zero in front of numbers < 10
+                            return i;
+                        }
+                    </script>
+
+      </div>
+    </div>
+    <div class="card">
+      <div class="container">
+        <img src="https://i.kym-cdn.com/entries/icons/original/000/014/959/Screenshot_116.png" id="cuteDog" style="width:320px">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js'></script><script  src="script\script.js"></script>
+
+</body>
+</html>
